@@ -5,9 +5,6 @@ small, strike, strong, sub, sup, tt, var, b, u, i, center,dl, dt, dd, ol, ul, li
     padding: 0;
     border: 0;
     outline: 0;
-    /*font-size: 100%;
-    vertical-align: baseline;*/
-    
 }
 html, body {height:100%; background: Tomato; font-family: "Roboto";}
 body {line-height: 1;}

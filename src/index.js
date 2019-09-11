@@ -5,28 +5,42 @@ import './index.css';
 class Menu extends React.Component {
   state = { 
     liSize: window.innerHeight / 10, // 5 tane li war diye
-    list: null
+    list: null,
+    //index: null
   }
 
   clickedList = (e) => {
-    let margin = 0
+    let list = this.state.list
+    let padding = 0
     let listId = e.target.id
     let id = document.getElementById(listId)
     let desiredPadding = window.innerWidth - id.clientWidth
+    let menu = document.getElementsByClassName("menu-list")[0]
+    id.style.fontSize = "larger" // XXX
     let paddingInterval = setInterval(
       () => {
-        if (margin >= desiredPadding) {
-          console.log(e.target)
-          document.getElementsByClassName("menu-list")[0].style.float = "left"
-          clearInterval(paddingInterval)
-          this.setState({ list: listId })
+        if (list == null) {
+          menu.style.paddingLeft = "0px"
+          padding = padding + desiredPadding / 25
+          menu.style.paddingRight = `${padding}px`
+          if (padding >= desiredPadding) {
+            menu.style.paddingRight = "0px"
+            menu.style.float = "left"
+            clearInterval(paddingInterval)
+            this.setState({ list: listId })
+          }
+        } else {
+          menu.style.paddingRight = "0px"
+          padding = padding + desiredPadding / 25
+          menu.style.paddingLeft = `${padding}px`
+          if (padding >= desiredPadding) {
+            menu.style.paddingLeft = "0px"
+            menu.style.float = "right"
+            clearInterval(paddingInterval)
+            this.setState({ list: null })
+          }
         }
-        margin = margin + desiredPadding / 20 //- id.clientHeight
-        id.setAttribute("style", `padding-right: ${margin}px`)
-        //id.setAttribute("style", `margin-right: ${margin}px`)
-        console.log(desiredPadding)
       }, 100)
-      //console.log(ReactDOM.findDOMNode(this).innerHTML)
   }
 
   newList() {
@@ -44,7 +58,7 @@ class Menu extends React.Component {
     } else {
       return (
         <ul>
-          <li id={list} onClick={this.clickedList}>{list}</li>
+          <li id={list} onClick={this.clickedList}>></li>
         </ul>
       )
     }
