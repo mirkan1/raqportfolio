@@ -4,7 +4,7 @@ import './index.css';
 
 class Menu extends React.Component {
   state = { 
-    liSize: window.innerHeight / 10, // 5 tane li war diye
+    liSize: window.innerHeight / 5, // 5 tane li war diye
     list: null,
     //index: null
   }
@@ -13,8 +13,10 @@ class Menu extends React.Component {
     let list = this.state.list
     let padding = 0
     let listId = e.target.id
+    this.setState({ list: listId })
     let id = document.getElementById(listId)
-    let desiredPadding = window.innerWidth - id.clientWidth
+    let desiredPadding = window.innerWidth - 50
+
     let menu = document.getElementsByClassName("menu-list")[0]
     id.style.fontSize = "larger" // XXX
     let paddingInterval = setInterval(
@@ -24,8 +26,10 @@ class Menu extends React.Component {
           padding = padding + desiredPadding / 25
           menu.style.paddingRight = `${padding}px`
           if (padding >= desiredPadding) {
-            menu.style.paddingRight = "0px"
-            menu.style.float = "left"
+            menu.setAttribute("style", "font-size: 100px; background-color: black; color: azure")
+            menu.setAttribute("align", "center")
+            //menu.style.paddingRight = "0px"
+            //menu.style.float = "left"
             clearInterval(paddingInterval)
             this.setState({ list: listId })
           }
@@ -34,8 +38,10 @@ class Menu extends React.Component {
           padding = padding + desiredPadding / 25
           menu.style.paddingLeft = `${padding}px`
           if (padding >= desiredPadding) {
-            menu.style.paddingLeft = "0px"
-            menu.style.float = "right"
+            menu.setAttribute("style", `font-size: 100px`)
+            menu.setAttribute("align", "right")
+            //menu.style.paddingLeft = "0px"
+            //menu.style.float = "right"
             clearInterval(paddingInterval)
             this.setState({ list: null })
           }
@@ -58,7 +64,7 @@ class Menu extends React.Component {
     } else {
       return (
         <ul>
-          <li id={list} onClick={this.clickedList}>></li>
+          <li id={list} onClick={this.clickedList}>{list}></li>
         </ul>
       )
     }
@@ -83,8 +89,18 @@ class Menu extends React.Component {
   }
   render() {
     return (
-      <div className="menu-list" style={{"font-size": this.state.liSize, "float": "right"}}>
+      <div className="menu-list" style={{"font-size": "100px", "float": "right"}}>
         {this.newList()}
+      </div>
+    )
+  }
+}
+
+class MainContent extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello WOrld!</h1>
       </div>
     )
   }
@@ -95,7 +111,8 @@ class Main extends React.Component {
     return (
       <html>
         <body>
-          <Menu clickedList={this.clickedList}/>
+          <Menu />
+          <MainContent />
         </body>
       </html>
     );
