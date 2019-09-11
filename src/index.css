@@ -22,12 +22,12 @@ textarea {overflow:auto;}
     padding-left: 30px;
   } */
   
-  .menu-list {
+  /* .menu-list {
     font-size: 100px;
-  }
-  .menu-list li{
+  } */
+  /* .menu-list li{
     padding-left: 45%;
-  }
+  } */
   li:hover {
     background-color: black;
     color: azure

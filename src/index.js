@@ -3,43 +3,80 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Menu extends React.Component {
+  state = { 
+    liSize: window.innerHeight / 10, // 5 tane li war diye
+    list: null
+  }
+
+  clickedList = (e) => {
+    let margin = 0
+    let listId = e.target.id
+    let id = document.getElementById(listId)
+    let desiredPadding = window.innerWidth - id.clientWidth
+    let paddingInterval = setInterval(
+      () => {
+        if (margin >= desiredPadding) {
+          console.log(e.target)
+          document.getElementsByClassName("menu-list")[0].style.float = "left"
+          clearInterval(paddingInterval)
+          this.setState({ list: listId })
+        }
+        margin = margin + desiredPadding / 20 //- id.clientHeight
+        id.setAttribute("style", `padding-right: ${margin}px`)
+        //id.setAttribute("style", `margin-right: ${margin}px`)
+        console.log(desiredPadding)
+      }, 100)
+      //console.log(ReactDOM.findDOMNode(this).innerHTML)
+  }
+
+  newList() {
+    let list = this.state.list
+    if (list == null) {
+      return (
+        <ul>
+          <li id="aboutme" onClick={this.clickedList}>About me</li>
+          <li id="myprojects" onClick={this.clickedList}>My projects</li>
+          <li id="tag3" onClick={this.clickedList}>My past</li>
+          <li id="tag4" onClick={this.clickedList}>Tag4</li>
+          <li id="tag5" onClick={this.clickedList}>Tag5</li>
+        </ul>
+      )
+    } else {
+      return (
+        <ul>
+          <li id={list} onClick={this.clickedList}>{list}</li>
+        </ul>
+      )
+    }
+  }
+
+  // onChangeText(value) {
+  //   this.setState({ value })
+  // }
   componentDidMount() {
-    let x = document.getElementsByTagName('li')[0].innerHTML
-    console.log(x)
+    //this.setState({ 
+    //  liSize: window.innerHeight / 5,
+    //  menuList: document.getElementsByClassName("menu-list")[0]
+    //})
+    //document.getElementsByClassName("menu-list")[0].setAttribute("style", `font-size: ${this.state.liSize}`)
     // bunu al iste sayfalari buna gore cek
     // basit bir brosur sitesi olacak 
     // sonra ise alinacan mirkan kasma yap bi seyler
   }
+  componentWillMount() {
+    //this.setState({ liSize: window.innerHeight / 5})
+    //console.log(this.state.menuList)//.setAttribute("style", `font-size: ${this.state.liSize}`)
+  }
   render() {
     return (
-      <div className="menu-list">
-        <ul>
-          <li id="aboutme" onClick={this.props.clickedList}  style={{"margin": "0 0 0 0",}}>About me</li>
-          <li id="myprojects" onClick={this.props.clickedList} >My projects</li>
-          <li id="tag3" onClick={this.props.clickedList} >My past</li>
-          <li id="tag4" onClick={this.props.clickedList} >Tag4</li>
-          <li id="tag5" onClick={this.props.clickedList} >Tag5</li>
-        </ul>
+      <div className="menu-list" style={{"font-size": this.state.liSize, "float": "right"}}>
+        {this.newList()}
       </div>
     )
   }
 }
+
 class Main extends React.Component {
-  clickedList(e) {
-    let margin = 100
-    let id = document.getElementById(e.target.id)
-    let paddingInterval = setInterval(
-      () => {
-        console.log(margin)
-        id.setAttribute("style", `padding-top: ${margin}px`)
-        //id.setAttribute("style", `margin-right: ${margin}px`)
-        margin = margin + 100
-        if (margin >= 500) {
-          clearInterval(paddingInterval)
-        }
-      }, 100)
-    //console.log(ReactDOM.findDOMNode(this).innerHTML)
-  }
   render() {
     return (
       <html>
