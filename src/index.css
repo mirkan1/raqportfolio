@@ -25,11 +25,25 @@ textarea {overflow:auto;}
   /* .menu-list li{
     padding-left: 45%;
   } */
-  li:hover {
-    background-color: black; 
-    color: azure
+  h6 {
+    transition: background 1s, transform 1s 1s linear, visibility 0.3s, position 0.3s ease-in-out;
+    color: black;
   }
-
+  .menuClass:hover {
+    background-color: black; 
+  }
+  .is-hided {
+    opacity: 0;
+    display: block;
+    position: absolute;
+  }
+  .is-main {
+    color: azure;
+    transform: translateX(-45vw);
+  }
+  .pos-absolute {
+  }
+  
 * { background-color: rgba(255,0,0,.2); }
 * * { background-color: rgba(0,255,0,.2); }
 * * * { background-color: rgba(0,0,255,.2); }
