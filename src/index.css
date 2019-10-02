@@ -26,12 +26,19 @@ textarea {overflow:auto;}
     padding-left: 45%;
   } */
   h6 {
-    transition: background 1s, transform 1s 1s linear, visibility 0.3s, position 0.3s ease-in-out;
-    color: black;
+    /* transition: background 1s, transform 1s 1s linear, visibility 0.3s, position 0.3s ease-in-out; */
+    transition: all 0.5s ease, opacity 0s;
+    color: azure;
+    font-size: 14vh
   }
-  .menuClass:hover {
-    background-color: black; 
-  }
+  .menu-list-child:hover {
+    color: tomato;
+    background-color: azure;
+    border-top: 10px;
+    border-bottom: 100px;
+    border-bottom-color: black
+    }
+
   .is-hided {
     opacity: 0;
     display: block;
@@ -39,12 +46,11 @@ textarea {overflow:auto;}
   }
   .is-main {
     color: azure;
-    transform: translateX(-45vw);
-  }
-  .pos-absolute {
+    padding-right: 40%;
+    /* transform: translateX(-45vw); */
   }
   
-* { background-color: rgba(255,0,0,.2); }
+/* * { background-color: rgba(255,0,0,.2); }
 * * { background-color: rgba(0,255,0,.2); }
 * * * { background-color: rgba(0,0,255,.2); }
 * * * * { background-color: rgba(255,0,255,.2); }
@@ -52,4 +58,4 @@ textarea {overflow:auto;}
 * * * * * * { background-color: rgba(255,255,0,.2); }
 * * * * * * * { background-color: rgba(255,0,0,.2); }
 * * * * * * * * { background-color: rgba(0,255,0,.2); }
-* * * * * * * * * { background-color: rgba(0,0,255,.2); }
+* * * * * * * * * { background-color: rgba(0,0,255,.2); } */
