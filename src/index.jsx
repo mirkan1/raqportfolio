@@ -5,7 +5,7 @@ import { Menu } from './menu'
 import { Content }  from './content'
 
 class Main extends React.PureComponent {
-  state = { contentState:null }
+  state = { contentState: null }
   toggleFunc = e => {
     var id = e.target.id
     var h6 = document.querySelectorAll("h6")
@@ -14,6 +14,9 @@ class Main extends React.PureComponent {
         h6[i].classList.toggle('is-hided')
       }
       else {
+         if (h6[i].classList.length > 1) {
+          id = null
+        }
         h6[i].classList.toggle('is-main')        
       }
     }
