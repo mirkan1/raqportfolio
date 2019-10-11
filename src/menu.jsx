@@ -8,10 +8,10 @@ export function Menu(props) {
         <h6 className="menu-list-child" id="aboutme" onClick={props.toggleFunc}>About me</h6>
       </div>
       <div>
-        <h6 className="menu-list-child" id="myprojects" onClick={props.toggleFunc}>My projects</h6>
+        <h6 className="menu-list-child" id="myprojects" onClick={props.toggleFunc}>Projects</h6>
       </div>
       <div>
-        <h6 className="menu-list-child" id="mycertificates" onClick={props.toggleFunc}>My certificates</h6>
+        <h6 className="menu-list-child" id="mycertificates" onClick={props.toggleFunc}>Certificates</h6>
       </div>
     </div>
   )

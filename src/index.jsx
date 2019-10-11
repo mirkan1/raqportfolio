@@ -17,7 +17,8 @@ class Main extends React.PureComponent {
          if (h6[i].classList.length > 1) {
           id = null
         }
-        h6[i].classList.toggle('is-main')        
+        h6[i].classList.toggle('is-main') 
+        setTimeout(()=> { h6[i].classList.toggle('stick-to-wall') }, 500)
       }
     }
     this.setState({ contentState: id })
