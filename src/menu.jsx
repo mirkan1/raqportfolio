@@ -5,7 +5,7 @@ export function Menu(props) {
   return (
     <div className="menu-list" style={{"font-size": "100px"}} align="right">
       <div>
-        <h6 className="menu-list-child" id="aboutme" onClick={props.toggleFunc}>About me</h6>
+        <h6 className="menu-list-child" id="aboutme" onClick={props.toggleFunc}>About</h6>
       </div>
       <div>
         <h6 className="menu-list-child" id="myprojects" onClick={props.toggleFunc}>Projects</h6>

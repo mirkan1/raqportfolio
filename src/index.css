@@ -6,7 +6,8 @@ small, strike, strong, sub, sup, tt, var, b, u, i, center,dl, dt, dd, ol, ul, li
     border: 0;
     outline: 0;
 }
-html, body {height:100%; background: Tomato; font-family: "Tohama";}
+html, body {height:100%; background: Tomato; font-family: "Tohama";
+  background-image: url("img/bug.jpg")}
 body {line-height: 1;}
 ol, ul {list-style: none;}
 blockquote, q {quotes: none;}
@@ -27,7 +28,7 @@ textarea {overflow:auto;}
   } */
   h6 {
     /* transition: background 1s, transform 1s 1s linear, visibility 0.3s, position 0.3s ease-in-out; */
-    transition: all 0.5s ease, opacity 0s;
+    transition: all 1s ease, opacity 0s;
     color: azure;
     font-size: 14vh;
   }
@@ -47,10 +48,15 @@ textarea {overflow:auto;}
   }
   .is-main {
     color: azure;
-    padding-right: 40%;
+    padding-right: 100%;
     /* transform: translateX(-45vw); */
   }
-  
+  .bg-blue {
+    color: tomato;
+    background-image: url("img/flowers.jpg");
+    background-position: center;
+    /* background-repeat: no-repeat; */
+  }
 /* * { background-color: rgba(255,0,0,.2); }
 * * { background-color: rgba(0,255,0,.2); }
 * * * { background-color: rgba(0,0,255,.2); }
