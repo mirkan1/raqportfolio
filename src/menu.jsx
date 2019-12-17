@@ -3,18 +3,40 @@ import './index.css'
 
 export function Menu(props) {
   return (
-    <div className="menu-list" style={{"font-size": "100px"}} align="right">
-      <div>
-        <h6 className="menu-list-child" id="aboutme" onClick={props.toggleFunc}>About</h6>
-      </div>
-      <div>
-        <h6 className="menu-list-child" id="myprojects" onClick={props.toggleFunc}>Projects</h6>
-      </div>
-      <div>
-        <h6 className="menu-list-child" id="mycertificates" onClick={props.toggleFunc}>Certificates</h6>
-      </div>
+    <div id="menu" className="rect-border">
+    <h1 align="center">Menu</h1>
+    <div className="menu-list" align="left" style={{ paddingLeft: "1.8vw",height: "40vh"}}>
+      <ol style={{listStyle: "square",}}>
+          <li className="menu-list-child" id="who" onClick={props.toggleFunc}>About</li>
+          <li className="menu-list-child" id="aboutme" onClick={props.toggleFunc}>Biography</li>
+          <li className="menu-list-child" id="myprojects" onClick={props.toggleFunc}>Project</li>
+          <li className="menu-list-child" id="mycertificates" onClick={props.toggleFunc}>Certificates</li>
+          <li className="menu-list-child" id="contact" onClick={props.toggleFunc}>Contact</li>
+        </ol>
+    </div>
+        <hr style={{width: 'auto', margin: "10% 1.5vw 0 1.5vw"}} size="4" color="#232020"></hr>
+        
+        <div id="brochureSide" style={{
+          display: "flex", 
+          flexDirection: "column", 
+          alignItems: 'center', 
+          justifyContent: "space-between",
+          height: "15vh",
+          paddingTop: "2.5vh",}}>
+          <a href="https://github.com/mirkan1" target="_blank" rel="noopener noreferrer" >github</a>
+          <a href="https://www.facebook.com/R.mirkan" target="_blank" rel="noopener noreferrer" >facebook</a>
+          <a href="https://twitter.com/mirkanOFmirkan" target="_blank" rel="noopener noreferrer" >twitter</a>  
+        </div>
     </div>
   )
 }
 
-// export default { Menu }
+const styles = {
+  menulist: {
+  },
+  brochureSide: {
+  },
+    menu: {
+    },
+}
+
