@@ -5,7 +5,7 @@ export function Menu(props) {
   return (
     <div id="menu" className="rect-border">
     <h1 align="center">Menu</h1>
-    <div className="menu-list" align="left" style={{ paddingLeft: "1.8vw",height: "40vh"}}>
+    <div className="menu-list" align="left" style={{ paddingLeft: "1.8vw",height: "30vh"}}>
       <ol style={{listStyle: "square",}}>
           <li className="menu-list-child" id="who" onClick={props.toggleFunc}>About</li>
           <li className="menu-list-child" id="aboutme" onClick={props.toggleFunc}>Biography</li>
@@ -14,7 +14,7 @@ export function Menu(props) {
           <li className="menu-list-child" id="contact" onClick={props.toggleFunc}>Contact</li>
         </ol>
     </div>
-        <hr style={{width: 'auto', margin: "10% 1.5vw 0 1.5vw"}} size="4" color="#232020"></hr>
+        <hr style={{width: 'auto', margin: "0 1.5vw 0 1.5vw"}} size="4" color="#232020"></hr>
         
         <div id="brochureSide" style={{
           display: "flex", 

@@ -85,8 +85,8 @@ function getPage(val) {
             )
       default:
         return (
-          <div style={{ padding: "5vh",}}>
-            <h1>HELLOW WORLD</h1>
+          <div style={{ padding: "30% 0 0 20%", fontSize: "3vw"}}>
+            <h1 style={{}}>HELLOW WORLD</h1>
           </div>
         )
     }
