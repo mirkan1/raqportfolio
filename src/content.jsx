@@ -102,11 +102,4 @@ export function Content(props) {
   )
 }
 
-
-
-const styles = {
-  content: {
-  },
-}
-
 //export default { Content }

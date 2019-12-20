@@ -34,7 +34,7 @@ ol {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
+  padding-inline-start: 2vh;
 }
 p {
   margin-bottom: 1vh;
@@ -80,11 +80,11 @@ p {
   }
   #menu li {
     font-family: "TravelingTypewriter";
-    font-size: 2.5vw;
-    padding-bottom: 15%;
+    font-size: 1.5vw;
+    padding-bottom: 2vh;
   }
   #menu h1 {
-    font-size: 5vw;
+    font-size: 3vw;
     padding: 2vw 0;
     text-decoration: underline;
   }
@@ -94,7 +94,7 @@ p {
   }
   #menu a {
     color: #232020;
-    font-size: 2vw;
+    font-size: 1.6vw;
     border-width: 5px;
     outline-offset: 10px; 
     padding: 2vh 8vw;

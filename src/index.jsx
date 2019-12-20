@@ -5,9 +5,12 @@ import { Menu } from './menu'
 import { Content }  from './content'
 import './index.css'
 
+var lastCall = new Date()
+
 class Main extends React.Component {
   state = { contentState: null }
 
+  
   followCursor = (function() {
     //XXX Make it follow you only when the curser in #navBar
     var s = document.createElement('div');
@@ -17,7 +20,7 @@ class Main extends React.Component {
     s.style.border = '2px solid red';
     s.style.borderRadius = '50%';
     s.style.backgroundColor = "red"
- 
+    
     
     return {
       init: function() {
@@ -31,13 +34,38 @@ class Main extends React.Component {
           if (e.clientX < window.innerWidth - 30 && e.clientX > 30) {
             s.style.left  = (e.clientX - 5) + 'px';
             s.style.top = (e.clientY - 5) + 'px';
-          }
+            //this.makeItRainBitch(e.clientX, e.clientY)
+            var rd = document.createElement('div')
+           
+            rd.style.position = 'absolute'
+            rd.style.height = '0.8vh'
+            rd.style.width = '0.08vw'
+            //rd.styleborderLeft = '1px solid #BFF4F7'
+            rd.style.left = (e.clientX - 5) + 'px';
+            rd.style.top = (e.clientY - 5) + 'px';
+            rd.style.backgroundColor = "#28628f"
+            
+            if (new Date() - lastCall > 100) {
+              document.body.appendChild(rd);
+              var rdAnim = setInterval(function(){ 
+                rd.style.top = (parseInt(rd.style.top) + 10) + "px"
+                if (parseInt(rd.style.top) > window.innerHeight - 20) {
+                  clearInterval(rdAnim)
+                  rd.remove()
+                }
+              }, Math.floor(Math.random() * 125) + 30
+              )
 
+              lastCall = new Date()
+            }
+          } 
         }
-        //this.getMouseCoords(e);
       }
-    };
+    }
   }());
+        makeItRainBitch(x, y) {
+          
+        }
 
   componentDidMount() {
       this.followCursor.init();
@@ -48,11 +76,10 @@ class Main extends React.Component {
     // XXX aynisina ikinciye basinca olmasin
     // alan kalsin, sadece yazilar kaybolsun geri gelsin
     var id = e.target.id
+    var content = document.getElementById("content");
     if (id === "aboutme") {
-      var content = document.getElementById("content");
       content.style.height = "150vh"
     } else {
-      var content = document.getElementById("content");
       content.style.height = "84vh"
     }
     this.setState({ contentState: id })
@@ -66,8 +93,7 @@ class Main extends React.Component {
       document.getElementById("content").style.transition = "all 1s ease"
     }, 500);
             
-  }
-  
+  }  
   
   render() {
     return (
@@ -77,7 +103,7 @@ class Main extends React.Component {
         </Helmet>
         <body>
           {/* kendi ozel dosyasi olsun navBar */}
-          <div id="navBar" className="rect-border" style={styles.navBar, { backgroundColor: "#f4f4f4"}}></div>
+          <div id="navBar" className="rect-border" style={styles.navBar}></div>
           <div id="container" class="container" style={styles.container}>
             <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>
             <Menu toggleFunc={this.toggleFunc}/>
@@ -95,6 +121,7 @@ const styles = {
   },
   
   navBar: {
+    backgroundColor: "#f4f4f4"
   }
 }
  

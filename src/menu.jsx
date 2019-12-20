@@ -14,7 +14,7 @@ export function Menu(props) {
           <li className="menu-list-child" id="contact" onClick={props.toggleFunc}>Contact</li>
         </ol>
     </div>
-        <hr style={{width: 'auto', margin: "0 1.5vw 0 1.5vw"}} size="4" color="#232020"></hr>
+        <hr style={{width: 'auto', margin: "5vh 1.5vw 0 1.5vw"}} size="4" color="#232020"></hr>
         
         <div id="brochureSide" style={{
           display: "flex", 
@@ -31,12 +31,4 @@ export function Menu(props) {
   )
 }
 
-const styles = {
-  menulist: {
-  },
-  brochureSide: {
-  },
-    menu: {
-    },
-}
 
