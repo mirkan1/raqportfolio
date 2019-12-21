@@ -39,7 +39,7 @@ class Main extends React.Component {
            
             rd.style.position = 'absolute'
             rd.style.height = '0.8vh'
-            rd.style.width = '0.08vw'
+            rd.style.width = '0.08vh'
             //rd.styleborderLeft = '1px solid #BFF4F7'
             rd.style.left = (e.clientX - 5) + 'px';
             rd.style.top = (e.clientY - 5) + 'px';
@@ -103,10 +103,35 @@ class Main extends React.Component {
         </Helmet>
         <body>
           {/* kendi ozel dosyasi olsun navBar */}
-          <div id="navBar" className="rect-border" style={styles.navBar}></div>
+          <div id="navBar" className="rect-border" style={{ display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: "#f4f4f4"}}>
+            <h1 style={{ marginLeft: "15%", fontSize: '2.4vw'}}>This <a href="https://www.xnxx.com">webside</a> is a creaton of coffee and some free time</h1>
+          </div>
           <div id="container" class="container" style={styles.container}>
             <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>
             <Menu toggleFunc={this.toggleFunc}/>
+          </div>
+          <div id="bottomArea" style={{
+            borderTop: '0.3vh solid #232020',
+            marginTop: "1vh",
+            height: "21vh",
+            fontSize: '3vw',
+            textDecoration: 'underline',
+          }}>
+          <div style={{
+            display: "flex",
+            alignItems: "Left",
+            flexDirection: "column",
+            height: "100%",
+            flex: "flex-shrink",
+            marginLeft: "5%"
+          }}>
+            <p style={{ height: "10%", marginTop: "5%", fontSize: '2vw'}}>In case of emergency contact:</p>
+              <ol style={{listStyle: "square", padding: "1vh", fontSize: '1.5vw', paddingBottom: '2vh'}}>
+                <li><a href="tel:+1 504 603 8251"> +1 504 603 8251 </a></li><br/>
+                <li><a href="mailto: mirkan.amazon@gmail.com"> mirkan.amazon@gmail.com</a></li><br/>
+                <li><a href="https://www.facebook.com/kadriyedemirkankilic" target="_blank" rel="noopener noreferrer">my mom</a></li>
+              </ol>
+          </div>
           </div>
         </body>
       </html>
@@ -115,6 +140,10 @@ class Main extends React.Component {
   }
   
 const styles = {
+  myFont: {
+    fontSize: '3vw',
+    textDecoration: 'underline',
+  },
   container: {
   },
   rightSide: {
