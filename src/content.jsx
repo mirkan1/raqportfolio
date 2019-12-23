@@ -78,10 +78,21 @@ function getPage(val) {
           )
       case "contact":
           return (
-            <div style={{ padding: "5vh"}}>
-              <h1>mirkanbaba1@gmail.com</h1>
-              <h1>+1 504 603 8251</h1>
-            </div>
+            <div style={{
+            display: "flex",
+            alignItems: "Left",
+            flexDirection: "column",
+            height: "100%",
+            flex: "flex-shrink",
+            marginLeft: "5%"
+          }}>
+            <p style={{ height: "10%", marginTop: "5%", fontSize: '2vw'}}>In case of emergency contact:</p>
+              <ol style={{listStyle: "square", padding: "1vh", fontSize: '1.5vw', paddingBottom: '2vh'}}>
+                <li><a href="tel:+1 504 603 8251"> +1 504 603 8251 </a></li>
+                <li><a href="mailto: mirkan.amazon@gmail.com"> mirkan.amazon@gmail.com</a></li>
+                <li><a href="https://www.facebook.com/kadriyedemirkankilic" target="_blank" rel="noopener noreferrer">my mom</a></li>
+              </ol>
+          </div>
             )
       default:
         return (
