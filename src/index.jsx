@@ -11,28 +11,18 @@ class Main extends React.Component {
   state = { contentState: null}
 
   followCursor = (function() {
-    var s = document.createElement('div');
-    s.style.position = 'absolute';
-    s.style.margin = '0';
-    s.style.padding = '5px';
-    s.style.border = '2px solid red';
-    s.style.borderRadius = '50%';
-    s.style.backgroundColor = "red"
     
     
     return {
       init: function() {
-        document.body.appendChild(s);
+        //document.body.appendChild(s);
       },
       
       run: function(e) {
-        // KIRMIZI NOKTAYI BURADAN SIL
         e = e || window.event;
         var bar = document.getElementById("navBar")
         if (e.clientY < bar.offsetHeight + 16 && e.clientY > 30) {
           if (e.clientX < window.innerWidth - 30 && e.clientX > 30) {
-            s.style.left  = (e.clientX - 5) + 'px';
-            s.style.top = (e.clientY - 5) + 'px';
             var rd = document.createElement('div')
            
             rd.style.position = 'absolute'
@@ -98,16 +88,24 @@ class Main extends React.Component {
   }  
 
   renderFire = () => {
+    
+    if (document.getElementsByClassName('fire').length > 0) {
+      ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0]) 
+  }
     var arr = [];
     for (let i = 0; i< 30 + Math.floor(Math.random() * 20) ; i++) {
         arr.push(i);
     }
     var renderedOutput = arr.map((item) => 
         <div className="particle" style={{ marginLeft: Math.random() * 5 + "vw"}} key={item.toString()}></div>)
+    var max = 7
+    var min = 3
     renderedOutput = (
         <div 
             className="fire" 
-            style={{ position: "absolute", zIndex: 1, marginTop: window.innerHeight / 10 * 6.8 + "px", marginLeft: Math.floor(Math.random() * window.innerWidth / 10 * 7) + "px"}}> 
+            style={{ position: "absolute", zIndex: 1, 
+            marginTop: window.innerHeight / 10 * (Math.random() * ((max - min) + 1)) + min + "px", 
+            marginLeft: Math.floor(Math.random() * window.innerWidth / 10 * 6) + "px"}}> 
             {renderedOutput} 
         </div>
       )
@@ -127,14 +125,9 @@ class Main extends React.Component {
                 </div>
             <div id="container" className="container" style={styles.container}>
                 <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>
-                <Menu toggleFunc={this.toggleFunc}/>
-                <button onClick={() => {
-                    if (document.getElementsByClassName('fire').length > 0) {
-                        ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0]) 
-                    }
-                    this.renderFire()
-                }} 
-                style={{ zIndex: 2}}>Click here if you want to set my website on fire</button>
+                <Menu toggleFunc={this.toggleFunc} onClick={
+                    this.renderFire
+                }/>
             </div>
         </div>
     )

@@ -2,14 +2,14 @@ import React from 'react'
 
 function getPage(val) {
   switch (val) {
-    case "who":
+    case "about":
       return (
-        <div style={{ padding: "5vh"}}>
+        <div style={{ padding: "5vh", }}>
           lives in New Orleans,<br/>
           full stack developer,<br/>
           eager to learning new things about any field of software development <br/>
           interested in:
-          <ol style={{listStyle: "square", padding: "1vh"}}>
+          <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
             <li>back end development</li>
             <li>UI development</li>
             <li>data visualization</li>
@@ -17,7 +17,7 @@ function getPage(val) {
           <div style={{ display: "flex", justifyContent: "space-between",}}>
             <div>
               known languages, frameworks:
-              <ol style={{listStyle: "square", padding: "1vh"}}>
+              <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
                 <li>Javascript</li>
                 <li>react</li>
                 <li>node.js</li>
@@ -34,7 +34,7 @@ function getPage(val) {
           </div>
       </div>
       )
-    case "aboutme":
+    case "bio":
       return (
         <div style={{ padding: "5vh"}}>
           <div align="center">
@@ -65,15 +65,87 @@ function getPage(val) {
       case "myprojects":
         return (
           <div style={{ padding: "5vh"}}>
-            <h1>my projects!</h1>
-          <p>Cok merak ediyorsaniz bakin amk burada iste: https://github.com/mirkan1?tab=repositories</p>
+            <h1>portfolio website</h1>
+            <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+              <li>My portfolio website aka this website</li>
+            </ol>
+            <h3>
+              <a href="https://github.com/mirkan1/raqportfolio" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>Raqportfolio;</span> source code</a>.
+            </h3>
+            <br/>
+
+            <h1>SomeTrexGame</h1>
+            <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+              <li>Basic mobile game used react-native</li>
+              <li>main character is at the middle of the screen</li>
+              <li>shooting objects around him and get point</li>
+              <li>based on arcade games</li>
+            </ol>
+            <h3>
+              <a href="https://github.com/mirkan1/someTrexGame" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>SomeTrexGame;</span> github repository</a>.
+                <br/>
+              <a href="https://snack.expo.io/@raq/sometrexgame-stable-prototype" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>SNACK.EXPO.io;</span> Sometrexgame-stable</a>
+            </h3>
+            <br/>
+
+            <h1>Elif'in okuzu</h1>
+            <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+              <li>Elif is a common name in Turkey and is also first letter of Arabic alphabet and comes from Greece's first letter Alpha</li>
+              <li>A dictionary based website about ethimology</li>
+              <li>My university project</li>
+              <li>Made with a group of people more than 10 including mentors and dev-ops</li>
+              <li>based on arcade games</li>
+            </ol>
+            <h3>
+              <a href="https://github.com/lyk2018-python/elifin-okuzu" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>Elif's ox;</span> source code</a>
+            </h3>
+            <br/>
+
+            <h1>Telegram chat bot</h1>
+            <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+              <li>A basic chat bot, gives people informations about Cryptocurrencies</li>
+              <li>I made it at the first times of my code learning times</li>
+              <li>Special thanks to Hakan for let me work on this project, it was so much fun and I learn lots of things on this project about Python and programming</li>
+            </ol>
+            <h3>
+              <a href="https://github.com/mirkan1/Telegram_spam" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>Telegram bot;</span> source code</a>
+            </h3>
+            
           </div>)
-      case "mycertificates":
+      default: //case "mycertificates":
         return (
-          <div style={{ padding: "5vh"}}>
-            <a href="https://sololearn.com/Profile/4488642">Solo learn</a><br/>
-            <a href="https://www.coursera.org/?authMode=login">Corserea</a><br/>
-            <a href="https://learn.freecodecamp.org">Freecodecamp</a>
+          <div>
+          <div className="flex-container-1" style={{ 
+            display: "flex", 
+            flexWrap: "nowrap", 
+            padding: "1vh", 
+            backgroundColor: "DodgerBlue",
+            alignItems: "stretch",
+            flexDirection: "row",
+          }}>
+          <div style={{ flexGrow: 2}}>
+            <img 
+              src={"https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=beautiful-beauty-blue-bright-414612.jpg&fm=jpg"}
+              alt="Örnek Resim"
+              width={"200px"}
+            >
+            </img>
+          </div>
+                <div style={{ flexGrow: 1}}><a href="https://www.coursera.org/?authMode=login">Corserea</a></div>
+                <div style={{ flexGrow: 5}}><a href="https://sololearn.com/Profile/4488642">Solo learn</a></div>
+            </div>
+
+          <div className="flex-container" style={{ 
+            display: "flex", 
+            flexWrap: "nowrap", 
+            padding: "1vh", 
+            backgroundColor: "DodgerBlue",
+            flexDirection: "column"
+          }}>
+
+            <div><a href="https://learn.freecodecamp.org">Freecodecamp</a></div>
+          </div>
+          
           </div>
           )
       case "contact":
@@ -94,12 +166,12 @@ function getPage(val) {
               </ol>
           </div>
             )
-      default:
-        return (
-          <div style={{ padding: "30% 0 0 20%", fontSize: "3vw"}}>
-            <h1 style={{}}>HELLOW WORLD</h1>
-          </div>
-        )
+      // default:
+      //   return (
+      //     <div style={{ padding: "30% 0 0 20%", fontSize: "3vw"}}>
+      //       <h1 style={{}}>HELLOW WORLD</h1>
+      //     </div>
+      //  )
     }
 }
 
