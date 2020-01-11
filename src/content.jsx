@@ -114,39 +114,36 @@ function getPage(val) {
           </div>)
       default: //case "mycertificates":
         return (
-          <div>
-          <div className="flex-container-1" style={{ 
-            display: "flex", 
-            flexWrap: "nowrap", 
-            padding: "1vh", 
-            backgroundColor: "DodgerBlue",
-            alignItems: "stretch",
-            flexDirection: "row",
-          }}>
-          <div style={{ flexGrow: 2}}>
-            <img 
-              src={"https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=beautiful-beauty-blue-bright-414612.jpg&fm=jpg"}
-              alt="Örnek Resim"
-              width={"200px"}
-            >
-            </img>
-          </div>
-                <div style={{ flexGrow: 1}}><a href="https://www.coursera.org/?authMode=login">Corserea</a></div>
-                <div style={{ flexGrow: 5}}><a href="https://sololearn.com/Profile/4488642">Solo learn</a></div>
-            </div>
+          	<div>
 
-          <div className="flex-container" style={{ 
-            display: "flex", 
-            flexWrap: "nowrap", 
-            padding: "1vh", 
-            backgroundColor: "DodgerBlue",
-            flexDirection: "column"
-          }}>
-
-            <div><a href="https://learn.freecodecamp.org">Freecodecamp</a></div>
-          </div>
+				<div className="flex-container-1" style={{
+					display: "flex", 
+					flexWrap: "nowrap", 
+					padding: "1vh", 
+					backgroundColor: "DodgerBlue",
+					alignItems: "stretch",
+					flexDirection: "row",
+				}}>
+					<div onClick={() => {window.location.href = "http://www.w3schools.com"}} style={{ flexGrow: 2, cursor: "pointer"}} className="rect-border"></div>
+					<div onClick={() => {window.location.href = "http://www.w3schools.com"}} style={{ flexGrow: 1, cursor: "pointer"}} className="rect-border"><a href="https://www.coursera.org/?authMode=login">Corserea</a></div>
+					<div onClick={() => {window.location.href = "https://sololearn.com/Profile/4488642"}} style={{ flexGrow: 5, cursor: "pointer"}} className="rect-border">
+						<img src={require('./img/SoloLearn-2018.png')} width="100%" height="100%" alt="sololearn"/>
+					</div>
+				</div>
+				<div onClick={() => {window.location.href = "https://www.freecodecamp.org/mirkan1"}} className="flex-container" style={{ 
+					display: "flex", 
+					cursor: "pointer",
+					flexWrap: "nowrap", 
+					padding: "1.5vh", 
+					backgroundColor: "DodgerBlue",
+					flexDirection: "column"
+				}}>
+					<div className="rect-border">
+						<img src={require('./img/freecodecamp.png')} width="100%" height="100%" alt="sololearn"/>
+					</div>
+				</div>
           
-          </div>
+          	</div>
           )
       case "contact":
           return (
