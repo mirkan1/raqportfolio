@@ -19,7 +19,7 @@ export function Menu(props) {
           display: "flex", 
           flexDirection: "column", 
           alignItems: 'center', 
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           height: "15vh",
           paddingTop: "2.5vh",}}>
           <a href="https://github.com/mirkan1" target="_blank" rel="noopener noreferrer" >github</a>
@@ -28,8 +28,8 @@ export function Menu(props) {
           <a onClick={props.onClick}  style={{
             textDecoration: "underline",
             cursor: "pointer",
-            zIndex: 2,
-          }}>fire</a>
+            zIndex: 2
+          }}>fire---</a>
         </div>
     </div>
   )

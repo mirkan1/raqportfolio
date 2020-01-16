@@ -8,9 +8,11 @@ import './index.scss'
 var lastCall = new Date()
 
 class Main extends React.Component {
-  state = { contentState: null, reward: 0}
+  state = { contentState: null}
 
   followCursor = (function() {
+    
+    
     return {
       init: function() {
         //document.body.appendChild(s);
@@ -49,13 +51,6 @@ class Main extends React.Component {
               )
 
               lastCall = new Date()
-              console.log(this)
-              if ( document.getElementsByClassName('fire')[0] !== undefined) {
-                if (document.getElementsByClassName('fire')[0].children.length <= 1) {
-                  ///// burasi ////
-                  document.getElementById('navBar').children[0].innerHTML = 'Now you can access the <a href="https://github.com/mirkan1/raqportfolio/tree/master/src">source code</a> of this website'
-              }
-            }
             }
           } 
         }
@@ -75,10 +70,8 @@ class Main extends React.Component {
     // alan kalsin, sadece yazilar kaybolsun geri gelsin
     var id = e.target.id
     var content = document.getElementById("content");
-    if (id === "bio") {
+    if (id === "aboutme") {
         content.style.height = "150vh"
-      } else if (id === "myprojects") {
-        content.style.height = "135vh"      
     } else {
         content.style.height = "84vh"
     }
@@ -92,12 +85,13 @@ class Main extends React.Component {
         document.getElementById("content").style.transition = "all 1s ease"
     }, 500);
             
-  }   
+  }  
 
   renderFire = () => {
+    
     if (document.getElementsByClassName('fire').length > 0) {
-      ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0])
-    }
+      ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0]) 
+  }
     var arr = [];
     for (let i = 0; i< 30 + Math.floor(Math.random() * 20) ; i++) {
         arr.push(i);
@@ -115,6 +109,7 @@ class Main extends React.Component {
             {renderedOutput} 
         </div>
       )
+
     ReactDOM.render(renderedOutput, document.getElementById('baba'))
   }
   
@@ -126,11 +121,13 @@ class Main extends React.Component {
             </Helmet>
             <div id="baba"></div>
                 <div id="navBar" className="rect-border" style={{ display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: "#f4f4f4"}}>
-                    <h1 style={{ marginLeft: "15%", fontSize: '2.4vw' }}>"The one who extinguish the fire you will be rewarded"</h1>
+                    <h1 style={{ marginLeft: "15%", fontSize: '2.4vw' }}>This <a href="https://www.xnxx.com">webside</a> is a creaton of coffee and some free time</h1>
                 </div>
             <div id="container" className="container" style={styles.container}>
                 <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>
-                <Menu toggleFunc={this.toggleFunc} onClick={this.renderFire}/>
+                <Menu toggleFunc={this.toggleFunc} onClick={
+                    this.renderFire
+                }/>
             </div>
         </div>
     )

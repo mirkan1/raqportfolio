@@ -2,7 +2,7 @@ import React from 'react'
 
 function getPage(val) {
   switch (val) {
-    default://case "about":
+    case "about":
       return (
         <div style={{ padding: "5vh", }}>
           lives in New Orleans,<br/>
@@ -38,7 +38,7 @@ function getPage(val) {
       return (
         <div style={{ padding: "5vh"}}>
           <div align="center">
-            <img src={require('./img/flowers.jpg')} width="25%" height="25%" alt="content pic"/>
+            <img src={require('./img/flowers.jpg')} alt="content pic"/>
           </div>
           <br/>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -104,7 +104,7 @@ function getPage(val) {
             <h1>Telegram chat bot</h1>
             <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
               <li>A basic chat bot, gives people informations about Cryptocurrencies</li>
-              <li>I had lots of fun creating it</li>
+              <li>I made it at the first times of my code learning times</li>
               <li>Special thanks to Hakan for let me work on this project, it was so much fun and I learn lots of things on this project about Python and programming</li>
             </ol>
             <h3>
@@ -112,37 +112,36 @@ function getPage(val) {
             </h3>
             
           </div>)
-      case "mycertificates":
+      default: //case "mycertificates":
         return (
-          	<div style={{}}>
-              <div className="flex-container-1" style={{
-                display: "flex", 
-                flexWrap: "nowrap", 
-                margin: "1vh 1vh 0 1vh",
-                alignItems: "stretch",
-                flexDirection: "row",
-              }}>
-                <div onClick={() => {window.location.href = "https://www.coursera.org/user/7b97bf00a1a450d935512b9d2debc67f"}} style={{ flexGrow: 1, cursor: "pointer"}} className="rect-border">
-                  <img src={require('./img/coursera.png')} width="100%" height="100%" alt="sololearn"/>
+          	<div>
 
-                </div>
-                <div id="solo"onClick={() => {window.location.href = "https://sololearn.com/Profile/4488642"}} style={{ flexGrow: 5, cursor: "pointer"}} className="rect-border">
-                  <img src={require('./img/SoloLearn-2018.png')} width="100%" height="100%" alt="sololearn"/>
-                </div>
-              </div>
-              <div onClick={() => {window.location.href = "https://www.freecodecamp.org/mirkan1"}} className="flex-container" style={{ 
-                display: "flex", 
-                cursor: "pointer",
-                flexWrap: "nowrap",
-                margin: "2vh",
-                flexDirection: "column",
-              }}>
-                <div className="rect-border" style={{
-                  height: 1 + 1 == 2 ? "385px" : "5px",
-                }}>
-                  <img src={require('./img/freecodecamp.png')} width="100%" height="100%" alt="sololearn"/>
-                </div>
-              </div>
+				<div className="flex-container-1" style={{
+					display: "flex", 
+					flexWrap: "nowrap", 
+					padding: "1vh", 
+					backgroundColor: "DodgerBlue",
+					alignItems: "stretch",
+					flexDirection: "row",
+				}}>
+					<div onClick={() => {window.location.href = "http://www.w3schools.com"}} style={{ flexGrow: 2, cursor: "pointer"}} className="rect-border"></div>
+					<div onClick={() => {window.location.href = "http://www.w3schools.com"}} style={{ flexGrow: 1, cursor: "pointer"}} className="rect-border"><a href="https://www.coursera.org/?authMode=login">Corserea</a></div>
+					<div onClick={() => {window.location.href = "https://sololearn.com/Profile/4488642"}} style={{ flexGrow: 5, cursor: "pointer"}} className="rect-border">
+						<img src={require('./img/SoloLearn-2018.png')} width="100%" height="100%" alt="sololearn"/>
+					</div>
+				</div>
+				<div onClick={() => {window.location.href = "https://www.freecodecamp.org/mirkan1"}} className="flex-container" style={{ 
+					display: "flex", 
+					cursor: "pointer",
+					flexWrap: "nowrap", 
+					padding: "1.5vh", 
+					backgroundColor: "DodgerBlue",
+					flexDirection: "column"
+				}}>
+					<div className="rect-border">
+						<img src={require('./img/freecodecamp.png')} width="100%" height="100%" alt="sololearn"/>
+					</div>
+				</div>
           
           	</div>
           )
