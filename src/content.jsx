@@ -115,7 +115,7 @@ function getPage(val) {
       case "mycertificates":
         return (
           	<div style={{}}>
-              <div className="flex-container-1" style={{
+              <div className="flex-container-1 certf" style={{
                 display: "flex", 
                 flexWrap: "nowrap", 
                 margin: "1vh 1vh 0 1vh",
@@ -137,10 +137,10 @@ function getPage(val) {
                 margin: "2vh",
                 flexDirection: "column",
               }}>
-                <div className="rect-border" style={{
+                <div id="certf" className="rect-border" style={{
                   height: 1 + 1 == 2 ? "385px" : "5px",
                 }}>
-                  <img src={require('./img/freecodecamp.png')} width="100%" height="100%" alt="sololearn"/>
+                    <img src={require('./img/freecodecamp.png')} width="100%" height="100%" alt="sololearn"/>
                 </div>
               </div>
           

@@ -172,6 +172,12 @@ p {
     line-height: 75px;
     font-size: 30px;
   }
+  .certf > div:hover {
+    border: 0.3vh #ff7315 solid;
+  }
+  #certf:hover {
+    border: 0.3vh #ff7315 solid;
+  }
 /* * { background-color: rgba(255,0,0,.2); }
 * * { background-color: rgba(0,255,0,.2); }
 * * * { background-color: rgba(0,0,255,.2); }

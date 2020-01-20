@@ -110,7 +110,7 @@ class Main extends React.Component {
         <div 
             className="fire" 
             style={{ position: "absolute", zIndex: 1, 
-            marginTop: window.innerHeight / 10 * (Math.random() * ((max - min) + 1)) + min + "px", 
+            bottom: 0,//marginTop: window.innerHeight / 10 * 7.2 + "px", 
             marginLeft: Math.floor(Math.random() * window.innerWidth / 10 * 6) + "px"}}> 
             {renderedOutput} 
         </div>
