@@ -7,4 +7,4 @@ PIC1
 ![alt text](https://github.com/mirkan1/raqportfolio/blob/master/src/img/projects/raqportfolio.png?raw=true)
 
 PIC2
-![alt text](https://github.com/mirkan1/raqportfolio/blob/master/src/img/projects/raqportfolio2.png?raw=true "hovering buttons")
+![alt text](https://github.com/mirkan1/raqportfolio/blob/master/src/img/projects/raqportfolio2.PNG?raw=true)
