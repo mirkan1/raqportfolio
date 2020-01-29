@@ -8,7 +8,7 @@ import './index.scss'
 var lastCall = new Date()
 
 class Main extends React.Component {
-  state = { contentState: null, reward: 0}
+  state = {contentState: null}
 
   followCursor = (function() {
     return {
@@ -67,7 +67,12 @@ class Main extends React.Component {
   componentDidMount() {
     this.followCursor.init();
     document.body.onmousemove = this.followCursor.run; // Mouse move
-  }
+    var f = document.getElementById("blinkyBlink");
+    setInterval(function() {
+      f.style.backgroundColor = (f.style.backgroundColor.toString() == 'rgb(255, 115, 21)' ? '' : 'rgb(255, 115, 21)');
+   }, 500)
+}
+  
   //================================
   
   toggleFunc = e => {
@@ -90,11 +95,16 @@ class Main extends React.Component {
     setTimeout(function(){ 
         document.getElementById("content").style.opacity = 1
         document.getElementById("content").style.transition = "all 1s ease"
-    }, 500);
-            
+    }, 500);      
   }   
 
   renderFire = () => {
+      for(let i=0; i<100; i++)
+      { //clears blinking interval
+        window.clearInterval(i);
+        var f = document.getElementById("blinkyBlink")
+        f.style.backgroundColor = (f.style.backgroundColor.toString() == 'rgb(112,112,112)' ? '' : '');
+      }
     if (document.getElementsByClassName('fire').length > 0) {
       ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0])
     }
@@ -122,11 +132,11 @@ class Main extends React.Component {
     return (
         <div>
             <Helmet>
-                <title>My Page</title>
+                <title>Mirkan Kilic - a Freelancer from New Orleans</title>
             </Helmet>
             <div id="baba"></div>
                 <div id="navBar" className="rect-border" style={{ display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: "#f4f4f4"}}>
-                    <h1 style={{ marginLeft: "15%", fontSize: '2.4vw' }}>"The one who extinguish the fire you will be rewarded"</h1>
+                    <h1 style={{ marginLeft: "15%", fontSize: '2.4vw' }}>"The one who extinguish the fire, you will be rewarded"</h1>
                 </div>
             <div id="container" className="container" style={styles.container}>
                 <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>

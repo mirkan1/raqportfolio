@@ -1,6 +1,11 @@
 import React from 'react'
 
+
 export function Menu(props) {
+  function blink(e, min_dividedBy_sec=5) {
+    var e = document.getElementById("blinkyBlink")
+    console.log('The link was clicked.', e);
+  }
   return (
     <div id="menu" className="rect-border">
     <h1 align="center">Menu</h1>
@@ -25,7 +30,9 @@ export function Menu(props) {
           <a href="https://github.com/mirkan1" target="_blank" rel="noopener noreferrer" >github</a>
           <a href="https://www.facebook.com/R.mirkan" target="_blank" rel="noopener noreferrer" >facebook</a>
           <a href="https://twitter.com/mirkanOFmirkan" target="_blank" rel="noopener noreferrer" >twitter</a>
-          <a onClick={props.onClick}  style={{
+          <a href="https://linkedin.com/raq" target="_blank" rel="noopener noreferrer" >linkedin</a>
+          <a id="blinkyBlink" onClick={props.onClick}
+            style={{
             textDecoration: "underline",
             cursor: "pointer",
             zIndex: 2,
