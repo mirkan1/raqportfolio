@@ -28,9 +28,9 @@ export function Menu(props) {
           height: "15vh",
           paddingTop: "2.5vh",}}>
           <a href="https://github.com/mirkan1" target="_blank" rel="noopener noreferrer" >github</a>
-          <a href="https://www.facebook.com/R.mirkan" target="_blank" rel="noopener noreferrer" >facebook</a>
+          <!--<a href="https://www.facebook.com/R.mirkan" target="_blank" rel="noopener noreferrer" >facebook</a>-->
           <a href="https://twitter.com/mirkanOFmirkan" target="_blank" rel="noopener noreferrer" >twitter</a>
-          <a href="https://linkedin.com/raq" target="_blank" rel="noopener noreferrer" >linkedin</a>
+          <a href="https://linkedin.com/in/raqux/" target="_blank" rel="noopener noreferrer" >linkedin</a>
           <a id="blinkyBlink" onClick={props.onClick}
             style={{
             textDecoration: "underline",
