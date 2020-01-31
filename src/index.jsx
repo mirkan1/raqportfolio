@@ -69,7 +69,7 @@ class Main extends React.Component {
     document.body.onmousemove = this.followCursor.run; // Mouse move
     var f = document.getElementById("blinkyBlink");
     setInterval(function() {
-      f.style.backgroundColor = (f.style.backgroundColor.toString() == 'rgb(255, 115, 21)' ? '' : 'rgb(255, 115, 21)');
+      f.style.backgroundColor = (f.style.backgroundColor.toString() === 'rgb(226, 40, 34)' ? '' : 'rgb(226, 40, 34)');
    }, 500)
 }
   
@@ -81,9 +81,9 @@ class Main extends React.Component {
     var id = e.target.id
     var content = document.getElementById("content");
     if (id === "bio") {
-        content.style.height = "150vh"
+        content.style.height = "320vh"
       } else if (id === "myprojects") {
-        content.style.height = "135vh"      
+        content.style.height = "225vh"      
     } else {
         content.style.height = "84vh"
     }
@@ -99,12 +99,13 @@ class Main extends React.Component {
   }   
 
   renderFire = () => {
-      for(let i=0; i<100; i++)
-      { //clears blinking interval
-        window.clearInterval(i);
-        var f = document.getElementById("blinkyBlink")
-        f.style.backgroundColor = (f.style.backgroundColor.toString() == 'rgb(112,112,112)' ? '' : '');
-      }
+    for(let i=0; i<100; i++)
+    { //clears blinking interval
+      window.clearInterval(i);
+      var f = document.getElementById("blinkyBlink")
+      f.style.backgroundColor = (f.style.backgroundColor.toString() === 'rgb(226, 40, 34)' ? '' : '');
+    }
+    
     if (document.getElementsByClassName('fire').length > 0) {
       ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0])
     }

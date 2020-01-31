@@ -4,7 +4,7 @@ function getPage(val) {
   switch (val) {
     default://case "about":
       return (
-        <div style={{ padding: "5vh", }}>
+        <div style={{ padding: "5vh" }}>
           lives in New Orleans,<br/>
           full stack developer,<br/>
           eager to learning new things about any field of software development <br/>
@@ -97,7 +97,8 @@ function getPage(val) {
               <li>based on arcade games</li>
             </ol>
             <h3>
-              <a href="https://github.com/lyk2018-python/elifin-okuzu" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>Elif's ox;</span> source code</a>
+            <a onClick={() => {window.open("https://github.com/lyk2018-python/elifin-okuzu", "", "width=600,height=600")}} href="javascript:void(0)" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>Elif's ox;</span> source code</a>
+            {/*<a href="https://github.com/lyk2018-python/elifin-okuzu" target="_blank" rel="noopener noreferrer"><span style={{ color: "#ff7315" }}>Elif's ox;</span> source code</a>*/}
             </h3>
             <br/>
 
@@ -160,7 +161,7 @@ function getPage(val) {
               <ol style={{listStyle: "square", padding: "1vh", fontSize: '1.5vw', paddingBottom: '2vh'}}>
                 <li><a href="tel:+1 504 603 8251"> +1 504 603 8251 </a></li>
                 <li><a href="mailto: mirkan.amazon@gmail.com"> mirkan.amazon@gmail.com</a></li>
-                <li><a href="https://www.facebook.com/kadriyedemirkankilic" target="_blank" rel="noopener noreferrer">my mom</a></li>
+                {/*<li><a href="https://www.facebook.com/kadriyedemirkankilic" target="_blank" rel="noopener noreferrer">my mom</a></li>*/}
               </ol>
           </div>
             )
@@ -177,7 +178,7 @@ export function Content(props) {
   var page = getPage(props.contentState)
   return (
     
-    <div  id="content" className="rect-border" style={props.style}>
+    <div  id="content" className="rect-border" style={props.style, { fontSize: "3.5vh", lineHeight: "1", wordSpacing: "0.5vh"}}>
       {page}
     </div>
   )
