@@ -5,30 +5,37 @@ function getPage(val) {
     default://case "about":
       return (
         <div style={{ padding: "5vh" }}>
-          lives in New Orleans,<br/>
+        <b>Renas Mirkan Kilic:</b><br/><br/>
+          Currently living in New Orleans,<br/>
           full stack developer,<br/>
-          eager to learning new things about any field of software development <br/>
-          interested in:
+          eager to learning new technologies about software development:
+          &nbsp;&nbsp;I wrote an application that sends notification when BTC increases all the sudden to see windows, to see how its like to develop softwares on windows and C language<br/><br/>
+          <b>interested in:</b>
           <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
             <li>back end development</li>
             <li>UI development</li>
             <li>data visualization</li>
           </ol>
-          <div style={{ display: "flex", justifyContent: "space-between",}}>
-            <div>
               known languages, frameworks:
-              <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
-                <li>Javascript</li>
-                <li>react</li>
-                <li>node.js</li>
-                <li>CSS</li>
-                <li>HTML</li>
-                <li>react-native</li>
-                <li>Python</li>
-                <li>django</li>
-                <li>flask</li>
-              </ol>
-            </div>
+          <div style={{ display: "flex", justifyContent: "space-between",}}>
+              <div>
+                <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+                  <li>Flutter</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>React-native</li>
+                  <li>Node.js</li>
+                </ol>
+              </div>
+              <div>
+                <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+                  <li>Python</li>
+                  <li>Django</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Selenium-webdriver</li>
+                </ol>
+              </div>
             <div id="pic-area">
             </div>
           </div>
@@ -38,7 +45,21 @@ function getPage(val) {
       return (
         <div style={{ padding: "5vh"}}>
           <div align="center">
-            <img src={require('./img/flowers.jpg')} width="25%" height="25%" alt="content pic"/>
+            <div style={{ display: "flex", flexWrap: "nowrap"}}>
+            <div style={{ backgroundColor: "#47C8D6", width:"25%" }}>
+            </div>
+            <div style={{width: "100%", height: "100%"}}>
+              <img src={require('./img/flowers.jpg')} width="50%" height="25%" alt="content pic"
+                style={{
+                  border: "3vw dashed #47C8D6",
+                  borderSpacing: "5vh",
+                }}
+                />
+              </div>
+              <div style={{ backgroundColor: "#47C8D6", width: "25%"}}></div>
+              </div>
+
+
           </div>
           <br/>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -51,7 +72,7 @@ function getPage(val) {
           <br/>
           <p>
           &nbsp;&nbsp;&nbsp;&nbsp;
-            This friend of mine suggested me to read <em property="italic" href="http://url/to/a/definition_of_italic"> Turkish Guide for Python 3</em> by Fırat Özgül (Fırat Özgül'den Python için Türkçe Kılavuz) <a href="https://belgeler.yazbel.com/python-istihza/" target="_blank" rel="noopener noreferrer">https://belgeler.yazbel.com/python-istihza/</a>.
+            This friend of mine suggested me to read <em property="italic" href="http://url/to/a/definition_of_italic"> Turkish Guide for Python 3</em> by Fırat Özgül (Fırat Özgül'den Python için Türkçe Kılavuz) <a href="https://python-istihza.yazbel.com/" target="_blank" rel="noopener noreferrer">https://python-istihza.yazbel.com/</a>.
             I saw that Fırat Özgül graduated from the Hospitality department as well, and that gave me the motivation to learn software development once again. He also wrote the book, which has a Creative Commons License, for people like me to learn the coding language Python.
             I started looking for work, but all the companies to which I applied requested a diploma for either Computer Engineering or Software Engineering. However, I found an employer that noticed my eagerness and hired me. I learned how to code Node.js, basics of AI, and understood the logic of computers over all <a href="https://user.vision" target="_blank" rel="noopener noreferrer"> https://user.vision </a>
             I am still learning, and I have come to understand that you can't only learn how to code and start working: You must be like a sponge and always remain open to learning new things.
@@ -157,10 +178,10 @@ function getPage(val) {
             flex: "flex-shrink",
             marginLeft: "5%"
           }}>
-            <p style={{ height: "10%", marginTop: "5%", fontSize: '2vw'}}>In case of emergency contact:</p>
-              <ol style={{listStyle: "square", padding: "1vh", fontSize: '1.5vw', paddingBottom: '2vh'}}>
-                <li><a href="tel:+1 504 603 8251"> +1 504 603 8251 </a></li>
-                <li><a href="mailto: mirkan.amazon@gmail.com"> mirkan.amazon@gmail.com</a></li>
+            <p style={{ height: "10%", marginTop: "5%", fontSize: '8vh'}}><b>CONTACT INFORMATONS:</b></p><br/><br/>
+              <ol style={{listStyle: "square", padding: "1vh", fontSize: '1.5vw', paddingBottom: '2vh', marginLeft: "5vh"}}>
+                <li style={{fontSize: '3.5vh'}}><a href="tel:+1 504 603 8251"> +1 504 603 8251 </a></li>
+                <li style={{fontSize: '3.5vh'}}><a href="mailto: mirkan.amazon@gmail.com"> mirkan.amazon@gmail.com</a></li>
                 {/*<li><a href="https://www.facebook.com/kadriyedemirkankilic" target="_blank" rel="noopener noreferrer">my mom</a></li>*/}
               </ol>
           </div>

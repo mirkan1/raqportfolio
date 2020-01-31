@@ -79,14 +79,14 @@ class Main extends React.Component {
     // XXX aynisina ikinciye basinca olmasin
     // alan kalsin, sadece yazilar kaybolsun geri gelsin
     var id = e.target.id
-    var content = document.getElementById("content");
-    if (id === "bio") {
-        content.style.height = "320vh"
-      } else if (id === "myprojects") {
-        content.style.height = "225vh"      
-    } else {
-        content.style.height = "84vh"
-    }
+    // var content = document.getElementById("content");
+    // if (id === "bio") {
+    //     content.style.height = "320vh"
+    //   } else if (id === "myprojects") {
+    //     content.style.height = "225vh"      
+    // } else {
+    //     content.style.height = "84vh"
+    // }
     this.setState({ contentState: id })
 
     document.getElementById("content").style.transition = "all 0s ease"
@@ -115,8 +115,7 @@ class Main extends React.Component {
     }
     var renderedOutput = arr.map((item) => 
         <div className="particle" style={{ marginLeft: Math.random() * 5 + "vw"}} key={item.toString()}></div>)
-    var max = 7
-    var min = 3
+
     renderedOutput = (
         <div 
             className="fire" 
@@ -133,11 +132,11 @@ class Main extends React.Component {
     return (
         <div>
             <Helmet>
-                <title>Mirkan Kilic - a Freelancer from New Orleans</title>
+                <title>R. Mirkan Kilic - Enthusiastic fullstack freelancer from Turkey</title>
             </Helmet>
             <div id="baba"></div>
                 <div id="navBar" className="rect-border" style={{ display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: "#f4f4f4"}}>
-                    <h1 style={{ marginLeft: "15%", fontSize: '2.4vw' }}>"The one who extinguish the fire, you will be rewarded"</h1>
+                    <h1 style={{ marginLeft: "35%", fontSize: '2.4vw' }}>Welcome to my website{/*The one who extinguish the fire, you will be rewarded*/}</h1>
                 </div>
             <div id="container" className="container" style={styles.container}>
                 <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>
