@@ -53,7 +53,9 @@ class Main extends React.Component {
               if ( document.getElementsByClassName('fire')[0] !== undefined) {
                 if (document.getElementsByClassName('fire')[0].children.length <= 1) {
                   ///// burasi ////
-                  document.getElementById('navBar').children[0].innerHTML = 'Now you can access the <a href="https://github.com/mirkan1/raqportfolio/tree/master/src">source code</a> of this website'
+                  var navBar = document.getElementById('navBar').children[0]
+                  navBar.innerHTML = 'Now you can access the <a href="https://github.com/mirkan1/raqportfolio/tree/master/src">source code</a> of this website'
+                  navBar.style.marginLeft = "15%"
               }
             }
             }
@@ -132,14 +134,14 @@ class Main extends React.Component {
     return (
         <div>
             <Helmet>
-                <title>R. Mirkan Kilic - Enthusiastic fullstack freelancer from Turkey</title>
+                <title>Mirkan Kilic - Freelancer from Turkey</title>
             </Helmet>
             <div id="baba"></div>
                 <div id="navBar" className="rect-border" style={{ display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: "#f4f4f4"}}>
                     <h1 style={{ marginLeft: "35%", fontSize: '2.4vw' }}>Welcome to my website{/*The one who extinguish the fire, you will be rewarded*/}</h1>
                 </div>
             <div id="container" className="container" style={styles.container}>
-                <Content contentState={this.state.contentState} style={{ backgroundColor: "white"}} info={"aminakodumun front-endi"}/>
+                <Content contentState={this.state.contentState} info={"amk"}/>
                 <Menu toggleFunc={this.toggleFunc} onClick={this.renderFire}/>
             </div>
         </div>

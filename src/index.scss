@@ -12,6 +12,10 @@ small, strike, strong, sub, sup, tt, var, b, u, i, center,dl, dt, dd, ol, ul, li
   src: url("font/TravelingTypewriter.otf");
 }
 html {}
+
+a:hover {
+  color: #ff7315;
+}
 body {
   font-size: 1.3vw;
   line-height: 1.5em;
@@ -64,6 +68,7 @@ p {
     margin-top: 1vw;
     height: auto;
     width: 68vw;
+    padding: 2vh 2vh 0 4vh;
   }
   #menu {
     margin-left: 1vw;

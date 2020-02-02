@@ -4,22 +4,23 @@ function getPage(val) {
   switch (val) {
     default://case "about":
       return (
-        <div style={{ padding: "5vh" }}>
+        <div >
         <b>Renas Mirkan Kilic:</b><br/><br/>
           Currently living in New Orleans,<br/>
           full stack developer,<br/>
           eager to learning new technologies about software development:
           &nbsp;&nbsp;I wrote an application that sends notification when BTC increases all the sudden to see windows, to see how its like to develop softwares on windows and C language<br/><br/>
-          <b>interested in:</b>
+          <b>Interested in:</b>
           <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
             <li>back end development</li>
             <li>UI development</li>
             <li>data visualization</li>
           </ol>
-              known languages, frameworks:
+              <b>Known languages, frameworks:</b>
           <div style={{ display: "flex", justifyContent: "space-between",}}>
               <div>
                 <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
+                  <li>Dart</li>
                   <li>Flutter</li>
                   <li>Javascript</li>
                   <li>React</li>
@@ -31,6 +32,7 @@ function getPage(val) {
                 <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
                   <li>Python</li>
                   <li>Django</li>
+                  <li>C</li>
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>Selenium-webdriver</li>
@@ -43,7 +45,7 @@ function getPage(val) {
       )
     case "bio":
       return (
-        <div style={{ padding: "5vh"}}>
+        <div >
           <div align="center">
             <div style={{ display: "flex", flexWrap: "nowrap"}}>
             <div style={{ backgroundColor: "#47C8D6", width:"25%" }}>
@@ -85,7 +87,7 @@ function getPage(val) {
         </div> )
       case "myprojects":
         return (
-          <div style={{ padding: "5vh"}}>
+          <div>
             <h1>portfolio website</h1>
             <ol style={{listStyle: "square", paddingLeft: "5vh"}}>
               <li>My portfolio website aka this website</li>
@@ -136,7 +138,7 @@ function getPage(val) {
           </div>)
       case "mycertificates":
         return (
-          	<div style={{}}>
+          	<div>
               <div className="flex-container-1 certf" style={{
                 display: "flex", 
                 flexWrap: "nowrap", 
@@ -160,7 +162,7 @@ function getPage(val) {
                 flexDirection: "column",
               }}>
                 <div id="certf" className="rect-border" style={{
-                  height: 1 + 1 == 2 ? "385px" : "5px",
+                  height: 1 + 1 === 2 ? "385px" : "5px",
                 }}>
                     <img src={require('./img/freecodecamp.png')} width="100%" height="100%" alt="sololearn"/>
                 </div>
@@ -199,7 +201,7 @@ export function Content(props) {
   var page = getPage(props.contentState)
   return (
     
-    <div  id="content" className="rect-border" style={props.style, { fontSize: "3.5vh", lineHeight: "1", wordSpacing: "0.5vh"}}>
+    <div  id="content" className="rect-border" style={{ fontSize: "3.5vh", lineHeight: "1", wordSpacing: "0.5vh"}}>
       {page}
     </div>
   )
