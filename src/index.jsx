@@ -2,7 +2,7 @@
 import ReactDOM from 'react-dom'
 import { Helmet } from 'react-helmet'
 import { Menu } from './menu'
-import { Content }  from './content'
+import { Content } from './content'
 import './index.scss'
 
 var lastCall = new Date()
@@ -10,32 +10,32 @@ var lastCall = new Date()
 class Main extends React.Component {
   state = {contentState: null}
 
-  followCursor = (function() {
+  followCursor = (function () {
     return {
-      init: function() {
+      init: function () {
         //document.body.appendChild(s);
       },
-      
-      run: function(e) {
+
+      run: function (e) {
         e = e || window.event;
         var bar = document.getElementById("navBar")
         if (e.clientY < bar.offsetHeight + 16 && e.clientY > 30) {
           if (e.clientX < window.innerWidth - 30 && e.clientX > 30) {
             var rd = document.createElement('div')
-           
+
             rd.style.position = 'absolute'
             rd.style.height = '0.8vh'
             rd.style.width = '0.08vh'
             rd.style.left = (e.clientX - 5) + 'px';
             rd.style.top = (e.clientY - 5) + 'px';
             rd.style.backgroundColor = "#28628f"
-            
+
             if (new Date() - lastCall > 100) {
               document.body.appendChild(rd);
-              var rdAnim = setInterval(function(){
+              var rdAnim = setInterval(function () {
                 rd.style.top = (parseInt(rd.style.top) + 10) + "px"
                 if (parseInt(rd.style.top) >= window.innerHeight - 10) {
-                  
+
                   if (document.getElementsByClassName("fire").length > 0 && document.getElementsByClassName("particle").length > 0) {
                     var fire = document.getElementsByClassName("fire")[0]
                     if (parseInt(rd.style.left.split("px")[0]) > parseInt(fire.style.marginLeft.split("px")[0]) && parseInt(rd.style.left.split("px")[0]) < fire.offsetWidth + parseInt(fire.style.marginLeft.split("px")[0])) {
@@ -50,7 +50,7 @@ class Main extends React.Component {
 
               lastCall = new Date()
               console.log(this)
-              if ( document.getElementsByClassName('fire')[0] !== undefined) {
+              if (document.getElementsByClassName('fire')[0] !== undefined) {
                 if (document.getElementsByClassName('fire')[0].children.length <= 1) {
                   ///// burasi ////
                   var navBar = document.getElementById('navBar').children[0]
@@ -59,7 +59,7 @@ class Main extends React.Component {
               }
             }
             }
-          } 
+          }
         }
       }
     }
@@ -76,7 +76,7 @@ class Main extends React.Component {
 }
   
   //================================
-  
+
   toggleFunc = e => {
     // XXX aynisina ikinciye basinca olmasin
     // alan kalsin, sadece yazilar kaybolsun geri gelsin
@@ -112,8 +112,8 @@ class Main extends React.Component {
       ReactDOM.unmountComponentAtNode(document.getElementsByClassName('fire')[0])
     }
     var arr = [];
-    for (let i = 0; i< 30 + Math.floor(Math.random() * 20) ; i++) {
-        arr.push(i);
+    for (let i = 0; i < 30 + Math.floor(Math.random() * 20); i++) {
+      arr.push(i);
     }
     var renderedOutput = arr.map((item) => 
         <div className="particle" style={{ marginLeft: Math.random() * 5 + "vw"}} key={item.toString()}></div>)
@@ -129,7 +129,7 @@ class Main extends React.Component {
       )
     ReactDOM.render(renderedOutput, document.getElementById('baba'))
   }
-  
+
   render() {
     return (
         <div>
@@ -147,8 +147,8 @@ class Main extends React.Component {
         </div>
     )
   }
-  }
-  
+}
+
 const styles = {
   myFont: {
     fontSize: '3vw',
@@ -158,12 +158,12 @@ const styles = {
   },
   rightSide: {
   },
-  
+
   navBar: {
     backgroundColor: "#f4f4f4"
   }
 }
- 
+
 // ========================================
 
 ReactDOM.render(
